@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+}
+.loginContainer{
+    background-color: #02bfa6;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    padding: 5rem 1rem 1rem 1rem;
+    width: 100%;
+}
