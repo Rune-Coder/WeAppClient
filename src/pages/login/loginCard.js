@@ -1,10 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { loginActions } from '../../store/loginStore';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import google from "../../images/google.png"
 import classes from './loginCard.module.css';
 
 function LoginCard(props){
+
+    const dispatch = useDispatch();
 
     const login = useGoogleLogin({
         onSuccess: async tokenResponse => {
@@ -15,7 +19,8 @@ function LoginCard(props){
                     }
                 });
                 const decodedData = res.data;
-                console.log(decodedData);
+
+                dispatch(loginActions.accountInfo({userData: decodedData}));
             }
             catch(err){
                 console.log('Login Failed', err);

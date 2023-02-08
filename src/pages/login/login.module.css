@@ -16,3 +16,10 @@ body{
     padding: 5rem 1rem 1rem 1rem;
     width: 100%;
 }
+.loginFooter{
+    bottom: 0;
+    color: #9e8fc4;
+    height: auto;
+    position: absolute;
+    width: 100%;
+}
