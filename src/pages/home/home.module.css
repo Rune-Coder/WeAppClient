@@ -1,3 +1,13 @@
+.chats{
+    width: 70%;
+}
 .messengerContainer{
     color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+.senders{
+    width: 30%;
 }

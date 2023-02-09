@@ -1,0 +1,40 @@
+.profilePic{
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+}
+.senderContainer{
+    align-items: center;
+    border-top: 0.08rem #d5ddca groove;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 1rem 1rem 1rem 1rem;
+    text-align: left;
+    width: 100%;
+}
+.sendersChats{
+    box-sizing: border-box;
+    color: black;
+    padding: 0 0 0 1rem;
+    width: 73%;
+}
+.sendersMsg{
+    color: #808876;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.sendersName{
+    font-size: 1.2rem;
+}
+.sendersPic{
+    width: 12%;
+}
+.sendersTime{
+    color: #808876;
+    padding-left: 0.3rem;
+    width: 15%;
+}
