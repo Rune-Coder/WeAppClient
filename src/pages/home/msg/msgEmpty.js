@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp  } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp  } from '@fortawesome/free-brands-svg-icons';
 import classes from './msgEmpty.module.css';
 
 function MsgEmpty(props){

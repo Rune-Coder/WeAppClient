@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Chats from './chats';
+import Chats from './msg/chats';
 import classes from './home.module.css';
-import MsgEmpty from './msgEmpty';
-import ProfileBar from './profileBar';
-import Senders from './senders';
+import MsgEmpty from './msg/msgEmpty';
+import ProfileBar from './senders/profileBar';
+import Senders from './senders/senders';
 
 function Home(props){
 
@@ -19,21 +19,21 @@ function Home(props){
             name: "Ram",
             msg: "Meet me nowsjhg uhfv kuuhggsfk diuhh ss gs bsk v",
             time: "Yesterday",
-            dp: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
+            pic: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
         },
         {
             _id: "2",
             name: "Shyam",
             msg: "Hii",
             time: "12:00",
-            dp: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
+            pic: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
         },
         {
             _id: "3",
             name: "Madhu",
             msg: "",
             time: "",
-            dp: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
+            pic: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1675964107~exp=1675964707~hmac=09082b1272c975ec45d65239a4aad37419a96cd0e83187097786bb7476e9b02d"
         },
     ];
 
@@ -43,7 +43,7 @@ function Home(props){
             name = {sendersInfo.name}
             msg = {sendersInfo.msg} 
             time = {sendersInfo.time} 
-            pic = {sendersInfo.pic} 
+            dp = {sendersInfo.pic} 
         />
     ));
 

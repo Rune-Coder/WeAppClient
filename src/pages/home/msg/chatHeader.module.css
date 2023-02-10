@@ -1,0 +1,23 @@
+.chatsHeaderContainer{
+    background-color: #bfcab1;
+    padding: 1rem 1rem 1rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 70%;
+}
+.profileList{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+.profilePic{
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import ChatHeader from './chatHeader';
 import classes from './chats.module.css';
+import MsgArea from './msgArea';
 
 function Chats(props){
 
@@ -9,7 +11,8 @@ function Chats(props){
 
     return(
         <div className={classes.chatsContainer}>
-            hello
+            <ChatHeader />
+            <MsgArea />
         </div>
     );
 }

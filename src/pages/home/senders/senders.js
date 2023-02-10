@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { senderActions } from '../../store/senderStore';
+import { senderActions } from '../../../store/senderStore';
 import classes from './senders.module.css';
 
 function Senders(props){
