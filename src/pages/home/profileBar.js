@@ -14,6 +14,9 @@ function ProfileBar(props){
                 <li>
                     {userSub.name}
                 </li>
+                <li>
+                    WeApp
+                </li>
             </ul>
         </div>
     );

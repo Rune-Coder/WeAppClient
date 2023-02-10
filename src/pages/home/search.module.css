@@ -1,0 +1,6 @@
+.searchContainer{
+    position: fixed;
+    top: 5rem;
+    height: 3rem;
+    width: inherit;
+}

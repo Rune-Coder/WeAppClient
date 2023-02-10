@@ -1,4 +1,6 @@
 .chats{
+    height: 100vh;
+    overflow-y: auto;
     width: 70%;
 }
 .messengerContainer{
@@ -9,5 +11,10 @@
     height: auto;
 }
 .senders{
+    height: 100vh;
+    overflow-y: auto;
     width: 30%;
+}
+.senderContainer{
+    margin-top: 5rem;
 }

@@ -1,0 +1,15 @@
+.msgEmptyContainer{
+    align-items: center;
+    color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+}
+.msgHeader{
+    font-size: 1.5rem;
+}
+.msgIcon{
+    color: #23c861;
+    font-size: 7rem;
+}

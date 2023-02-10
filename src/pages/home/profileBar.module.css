@@ -1,7 +1,9 @@
 .profileContainer{
     background-color: #bfcab1;
     padding: 1rem 1rem 1rem 1rem;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    width: inherit;
 }
 .profileList{
     align-items: center;
@@ -13,6 +15,15 @@
     margin: 0;
     padding: 0;
     width: auto;
+}
+.profileList li:nth-child(2){
+    text-align: left;
+    width: 60%;
+}
+.profileList li:nth-child(3){
+    color: #23c861;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .profilePic{
     border-radius: 100%;
