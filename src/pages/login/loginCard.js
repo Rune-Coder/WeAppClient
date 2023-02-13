@@ -5,6 +5,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import google from "../../images/google.png"
 import classes from './loginCard.module.css';
+import url from '../../components/connect';
 
 function LoginCard(props){
 
@@ -19,6 +20,9 @@ function LoginCard(props){
                     }
                 });
                 const decodedData = res.data;
+
+                const response = await axios.post(url+'/api/user/login', decodedData);
+                console.log(response);
 
                 dispatch(loginActions.accountInfo({userData: decodedData}));
             }
