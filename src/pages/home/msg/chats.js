@@ -6,7 +6,7 @@ import MsgArea from './msgArea';
 
 function Chats(props){
 
-    const senderSub = useSelector((state) => state.senders.senderData);
+    const senderSub = useSelector((state) => state.senders.senderData);// receiver is me & sender is the other person
     console.log(senderSub);
 
     return(
