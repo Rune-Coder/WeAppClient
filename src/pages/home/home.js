@@ -31,7 +31,7 @@ function Home(props){
     const senders = sendersList.map((sendersInfo) => (
         <Senders 
             key = {sendersInfo._id} 
-            senderId = {sendersInfo._id} 
+            senderId = {sendersInfo.userData.sub} 
             name = {sendersInfo.userData.name}
             msg = {"hello"} 
             time = {"Yesterday"} 
