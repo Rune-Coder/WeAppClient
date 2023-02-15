@@ -1,0 +1,36 @@
+.msgContainer{
+    padding-top: 1rem;
+    width: 100%;
+}
+.msgTime{
+    color: #60615e;
+    font-size: 0.7rem;
+    margin-left: auto; 
+    margin-right: 0;
+    width: fit-content;
+}
+.receiverMsg{
+    background-color: #23c861;
+    border-radius: 0.938rem;
+    border-top-right-radius: 0;
+    height: auto;
+    max-width: 50%;
+    margin-left: auto; 
+    margin-right: 2rem;
+    padding: 0.5rem 1rem 0.3rem 1rem;
+    text-align: left;
+    width: fit-content;
+    word-break: break-all;
+}
+.senderMsg{
+    background-color: white;
+    border-radius: 0.938rem;
+    border-top-left-radius: 0;
+    height: auto;
+    max-width: 50%;
+    margin-left: 2rem; 
+    padding: 0.5rem 1rem 0.3rem 1rem;
+    text-align: left;
+    width: fit-content;
+    word-break: break-all;
+}
