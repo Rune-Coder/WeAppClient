@@ -10,7 +10,7 @@ function Message(props){
     hours = (hours > 12) ? hours-12: hours;
     var min = time.getMinutes();
     var meridiem = (hours >= 12) ? "PM": "AM";
-
+    hours = (hours === 0) ? 12: hours;
 
     return(
         <div className={classes.msgContainer}>
