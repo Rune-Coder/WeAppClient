@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import url from '../../../components/connect';
 import ChatHeader from './chatHeader';
@@ -12,9 +12,15 @@ function Chats(props){
     const senderSub = useSelector((state) => state.senders.senderData);
     const receiverSub = useSelector((state) => state.login.loginData);// receiver is me & sender is the other person
 
-    const [conversation, setConversation] = useState({});
-    const [allMsg, setAllMsg] = useState([]);
-    const [msgFlag, setMsgFlag] = useState(false);
+    const [conversation, setConversation] = useState({});//put conversation data
+    const [allMsg, setAllMsg] = useState([]);//put all msgs
+    const [msgFlag, setMsgFlag] = useState(false);//
+
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        scrollRef.current?.scrollIntoView({ behavior : "smooth"})
+    }, [allMsg]);
 
     useEffect(() => {
         async function createConversation(){
@@ -59,7 +65,7 @@ function Chats(props){
     return(
         <div className={classes.chatsContainer}>
             <ChatHeader />
-            <div style={{overflowY : "auto"}}>{messages}</div>
+            <div style={{overflowY : "auto"}}>{messages}<div ref={scrollRef} /></div>
             <MsgArea senderId = {senderSub.senderId} receiverId = {receiverSub.sub} conversationId = {conversation._id} msgFlag = {msgFlagHandler} />
         </div>
     );

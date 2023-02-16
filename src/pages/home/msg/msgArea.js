@@ -72,6 +72,7 @@ function MsgArea(props){
     function fileInputHandler(event){
         setFile(event.target.files[0]);
         setMsg(event.target.files[0].name);
+        setVal("Uploading Please Wait...");
     }
 
     return(
