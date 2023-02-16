@@ -12,6 +12,7 @@ function MsgArea(props){
     const [isSend, setIsSend] = useState(false);
     const [file, setFile] = useState({});
     const [image, setImage] = useState("");
+    const [val, setVal] = useState("");
     
     function getMsgHandler(text){
         setMsg(text);
@@ -23,14 +24,13 @@ function MsgArea(props){
         async function fileSend(){
             const data = new FormData();
             data.append("name", file.name);
-            data.append("file", file);
-            
+            data.append("file", file);     
             const response = await axios.post(url+'/api/conversation/file-upload', data); 
-            console.log(response.data);
             var fileLink = response.data;
             var links = fileLink.split("file/");
             fileLink = links[0]+"api/conversation/file-get?filename="+links[1];
             setImage(fileLink);
+            setVal(file.name);
             
         }
         file.name && fileSend();
@@ -65,6 +65,7 @@ function MsgArea(props){
         setImage("");
         setFile({});
         setMsg("");
+        setVal("");
         console.log(response);
     }
 
@@ -79,7 +80,7 @@ function MsgArea(props){
                 <label htmlFor="fileInput" style={{cursor : "pointer"}}><AttachFileIcon /></label>
                 <input type="file" id = "fileInput" style={{display : "none"}} onChange = {fileInputHandler} />
             </span>
-            <TextBox send = {getMsgHandler} isSend = {isSend}/>
+            <TextBox send = {getMsgHandler} isSend = {isSend} val = {val}/>
             <span className={classes.sendIcon} onClick={msgSend}><SendIcon /></span>
         </div>
     );

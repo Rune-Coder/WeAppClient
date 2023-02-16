@@ -59,7 +59,7 @@ function Chats(props){
     return(
         <div className={classes.chatsContainer}>
             <ChatHeader />
-            {messages}
+            <div style={{overflowY : "auto"}}>{messages}</div>
             <MsgArea senderId = {senderSub.senderId} receiverId = {receiverSub.sub} conversationId = {conversation._id} msgFlag = {msgFlagHandler} />
         </div>
     );
