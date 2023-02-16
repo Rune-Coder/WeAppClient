@@ -5,20 +5,34 @@ import classes from './msgArea.module.css';
 import TextBox from './textBox';
 import axios from 'axios';
 import url from '../../../components/connect';
+import { useSelector } from 'react-redux';
 
 function MsgArea(props){
+
+    const socket = useSelector((state) => state.login.socket);
+    const senderSub = useSelector((state) => state.senders.senderData);
 
     const [msg, setMsg] = useState("");
     const [isSend, setIsSend] = useState(false);
     const [file, setFile] = useState({});
     const [image, setImage] = useState("");
     const [val, setVal] = useState("");
+    const [incomingMessage, setIncomingMessage] = useState({});
     
     function getMsgHandler(text){
         setMsg(text);
         if(isSend)
             setIsSend(false);
     }
+
+    useEffect(() => {
+        socket.on("getMessage", data => {
+            setIncomingMessage({
+                ...data,
+                createdAt: Date.now()
+            });
+        });
+    }, [socket]);
 
     useEffect(() => {
         async function fileSend(){
@@ -36,31 +50,39 @@ function MsgArea(props){
         file.name && fileSend();
     }, [file]);
 
+    useEffect(() => {
+        incomingMessage.message && (incomingMessage.receiverId === senderSub.sub) && props.newMsg(incomingMessage);
+    }, [incomingMessage, senderSub, props]);
+
 
     async function msgSend(event){// sending my message
         if(msg.trim() === "")
             return;
         setIsSend(true);
-        var response;
+
+        var response, message = {};
         if(file.name){// check for file attach
-            console.log(image);
-            response = await axios.post(url+'/api/conversation/msg-send', {
+             message = {
                 senderId: props.senderId,
                 receiverId: props.receiverId,
                 conversationId: props.conversationId,
                 message: image,
                 type: "file"
-            }); 
+            }; 
         }
         else{
-            response = await axios.post(url+'/api/conversation/msg-send', {
+            message = {
                 senderId: props.senderId,
                 receiverId: props.receiverId,
                 conversationId: props.conversationId,
                 message: msg,
                 type: "text"
-            }); 
+            }; 
         }
+
+        socket.emit("sendMessage", message);
+
+        response = await axios.post(url+'/api/conversation/msg-send', message); 
         props.msgFlag();
         setImage("");
         setFile({});

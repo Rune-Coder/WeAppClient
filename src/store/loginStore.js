@@ -1,8 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {io} from 'socket.io-client';
+import url from "../components/connect";
 
 const initialLoginState = {
     loggedin: false,
-    loginData: {}
+    loginData: {},
+    socket: io(url),
+    activeUsers: []
 };
 
 const loginSlice = createSlice({
@@ -14,6 +18,10 @@ const loginSlice = createSlice({
             state.loginData = user.userData;
             state.loggedin = true;
         },
+        activeUsersState(state, action){
+            const user = action.payload;
+            state.activeUsers = user.activeUserData;
+        }
     },
 });
 
