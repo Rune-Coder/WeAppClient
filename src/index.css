@@ -13,7 +13,7 @@ code {
 }
 
 ::-webkit-scrollbar{
-  width: 0.3rem;
+  width: 0.1rem;
 }
 
 ::-webkit-scrollbar-track{

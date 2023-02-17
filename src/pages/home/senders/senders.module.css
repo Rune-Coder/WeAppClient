@@ -38,3 +38,15 @@
     padding-left: 0.3rem;
     width: 15%;
 }
+
+@media screen and (max-width: 1000px){
+    .sendersChats{
+        width: 68%;
+    }
+    .sendersPic{
+        width: 12%;
+    }
+    .sendersTime{
+        width: 20%;
+    }
+}
