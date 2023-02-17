@@ -1,4 +1,4 @@
-.chats{
+.chats, .emptyChats{
     height: 100vh;
     overflow-y: auto;
     width: 70%;
