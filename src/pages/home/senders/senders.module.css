@@ -50,3 +50,15 @@
         width: 20%;
     }
 }
+
+@media screen and (max-width: 500px){
+    .sendersChats{
+        width: 65%;
+    }
+    .sendersPic{
+        width: 12%;
+    }
+    .sendersTime{
+        width: 23%;
+    }
+}
