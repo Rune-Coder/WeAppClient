@@ -43,7 +43,7 @@ function Senders(props){
         hours = (hours === 0) ? 12: hours;
         currTime = hours+":"+("0" + min).slice(-2)+" "+meridiem;
         
-        liveMessage = (conversation.message.includes("localhost")) ? conversation.message.split("file-")[2] : conversation.message;
+        liveMessage = (conversation.message.includes("https://weappserver-production.up.railway.app")) ? conversation.message.split("file-")[2] : conversation.message;
     }
 
     return(
