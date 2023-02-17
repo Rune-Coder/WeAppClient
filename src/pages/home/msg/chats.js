@@ -36,7 +36,6 @@ function Chats(props){
                 receiverId: receiverSub.sub
             });
             setConversation(response.data);
-            console.log(response);
         }
         createConversation();
     }, [senderSub.senderId, receiverSub.sub]);

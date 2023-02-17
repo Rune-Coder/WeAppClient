@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialSenderState = {
-    senderData: {}
+    senderData: {},
+    recentMsg: {}
 };
 
 const senderSlice = createSlice({
@@ -11,6 +12,10 @@ const senderSlice = createSlice({
         person(state, action){
             const person = action.payload;
             state.senderData = person.senderData;
+        },
+        currMsg(state, action){
+            const message = action.payload;
+            state.recentMsg = message.messageData;
         },
     },
 });

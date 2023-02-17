@@ -5,12 +5,14 @@ import classes from './msgArea.module.css';
 import TextBox from './textBox';
 import axios from 'axios';
 import url from '../../../components/connect';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { senderActions } from '../../../store/senderStore';
 
 function MsgArea(props){
 
     const socket = useSelector((state) => state.login.socket);
     const senderSub = useSelector((state) => state.senders.senderData);
+    const dispatch = useDispatch();
 
     const [msg, setMsg] = useState("");
     const [isSend, setIsSend] = useState(false);
@@ -83,6 +85,8 @@ function MsgArea(props){
         socket.emit("sendMessage", message);
 
         response = await axios.post(url+'/api/conversation/msg-send', message); 
+
+        dispatch(senderActions.currMsg({messageData: message}));
         props.msgFlag();
         setImage("");
         setFile({});
@@ -95,6 +99,7 @@ function MsgArea(props){
         setFile(event.target.files[0]);
         setMsg(event.target.files[0].name);
         setVal("Uploading Please Wait...");
+        document.getElementById("fileInput").value = "";
     }
 
     return(

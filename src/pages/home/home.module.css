@@ -18,3 +18,18 @@
 .senderContainer{
     margin-top: 5rem;
 }
+
+@media screen and (max-width: 1000px){
+    .senders{
+        width: 100%;
+    }
+    .emptyChats{
+        display: none;
+    }
+    .chats{
+        width: 100%;
+    }
+    .closeSenders{
+        display: none;
+    }
+}

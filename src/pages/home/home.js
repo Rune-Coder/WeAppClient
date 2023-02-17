@@ -33,19 +33,17 @@ function Home(props){
             key = {sendersInfo._id} 
             senderId = {sendersInfo.userData.sub} 
             name = {sendersInfo.userData.name}
-            msg = {"hello"} 
-            time = {"Yesterday"} 
             dp = {sendersInfo.userData.picture} 
         />
     ));
 
     return(
         <div className={classes.messengerContainer}>
-            <div className={classes.senders}>
+            <div className = {`${classes.senders} ${Object.keys(senderSub).length && classes.closeSenders}`}>
                 <ProfileBar />
                 {senders.length > 0 && <div className={classes.senderContainer}>{senders}</div>}
             </div>
-            <div className={classes.chats}>
+            <div className = {`${!Object.keys(senderSub).length && classes.emptyChats} ${Object.keys(senderSub).length && classes.chats}`}>
                 {Object.keys(senderSub).length ? <Chats /> : <MsgEmpty />}
             </div>
         </div>

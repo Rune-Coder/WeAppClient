@@ -31,3 +31,9 @@
     flex-direction: column;
     justify-content: left;
 }
+
+@media screen and (max-width: 1000px){
+    .chatsHeaderContainer{
+        width: 100%;
+    }
+}
