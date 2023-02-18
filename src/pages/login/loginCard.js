@@ -41,7 +41,7 @@ function LoginCard(props){
 
     return(
         <>
-        {preloader && <div className={classes.preloader}><span className={classes.msgIcon}><FontAwesomeIcon icon={faWhatsapp} /></span></div>}
+        {preloader && <div><span className={classes.msgIcon}><FontAwesomeIcon icon={faWhatsapp} /></span></div>}
         {!preloader && <div className={classes.loginCardContainer}>
             <h1 className={classes.loginCardHeader}>WeApp</h1>
             <p>Login to your account</p>
