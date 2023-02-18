@@ -33,6 +33,13 @@
 .loginCardHeader{
     color: #23c861;
 }
+.msgIcon{
+    font-size: 10rem;
+}
+.preloader{
+    height: 100vh;
+    width: 100%;
+}
 
 @media screen and (max-width: 945px) {
     .googleLoginBtn, .loginCardContainer{

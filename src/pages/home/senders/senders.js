@@ -34,7 +34,7 @@ function Senders(props){
 
     var currTime = "", liveMessage = "";
 
-    if(conversation.updatedAt){
+    if(conversation.updatedAt && conversation.message !== ""){
         var time = new Date(conversation.updatedAt);
         var hours = time.getHours();
         var meridiem = (hours >= 12) ? "PM": "AM";
